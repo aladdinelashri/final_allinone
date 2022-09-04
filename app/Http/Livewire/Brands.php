@@ -106,6 +106,7 @@ class Brands extends Component
 
 
 
+
     /**
      * Shows the form modal
      * of the create function.
@@ -142,6 +143,12 @@ class Brands extends Component
      * @return void
      */
     public function deleteShowModal($id)
+    {
+        $this->modelId = $id;
+        $this->modalConfirmDeleteVisible = true;
+    }
+
+    public function softdeleteShowModal($id)
     {
         $this->modelId = $id;
         $this->modalConfirmDeleteVisible = true;
