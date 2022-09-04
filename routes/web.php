@@ -39,7 +39,13 @@ Route::middleware([
             return view('admin/brands');
         });
 
+        Route::get('/sdeletebrands', function () {
+            return view('admin/sdeletebrands');
+        });
 
+        Route::get('/brandsdetails', function () {
+            return view('admin/brandsdetails');
+        });
 
 
     });

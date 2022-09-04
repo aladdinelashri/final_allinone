@@ -148,11 +148,7 @@ class Brands extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-    public function softdeleteShowModal($id)
-    {
-        $this->modelId = $id;
-        $this->modalConfirmDeleteVisible = true;
-    }
+   
 
     /**
      * Loads the model data
