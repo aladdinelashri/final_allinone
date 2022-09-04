@@ -38,8 +38,10 @@ Route::middleware([
         Route::get('/brands', function () {
             return view('admin/brands');
         });
-        
-       
+
+
+
+
     });
 
 
@@ -47,7 +49,12 @@ Route::middleware([
         Route::get('/brands', function () {
             return view('users/brands');
         });
+
+        Route::get('/brandsdetails', function () {
+            return view('users/brandsdetails');
+        });
+
     });
 
-    
+
 });
