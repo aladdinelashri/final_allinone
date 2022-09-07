@@ -16,6 +16,7 @@ class Sdeletebrands extends Component
     public $modelId;
     public $name;
     public $note;
+    public $selected_id;
 
     /**
      * The validation rules
@@ -66,7 +67,7 @@ class Sdeletebrands extends Component
      */
     public function read()
     {
-        return Brand::withTrashed()->paginate(5);
+        return Brand::onlyTrashed()->paginate(5);
     }
 
     /**
