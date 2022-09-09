@@ -56,6 +56,18 @@ Route::middleware([
             return view('admin/weightoptions');
         });
 
+        Route::get('/tagitems', function () {
+            return view('admin/tagitems');
+        });
+        Route::get('/tagproducts', function () {
+            return view('admin/tagproducts');
+        });
+        Route::get('/categoryitems', function () {
+            return view('admin/categoryitems');
+        });
+        Route::get('/categoryproducts', function () {
+            return view('admin/categoryproducts');
+        });
 
     });
 
