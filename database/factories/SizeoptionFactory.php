@@ -17,7 +17,7 @@ class SizeoptionFactory extends Factory
     public function definition()
     {
         return [
-            'Title' => '----',
+            'name' => '----',
         ];
     }
 }

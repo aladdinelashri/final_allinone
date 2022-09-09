@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('weightoptions', function (Blueprint $table) {
             $table->id();
             $table->softDeletes();
-            $table->string('Title', 50)->unique();
+            $table->string('name', 50)->unique();
             $table->timestamps();
         });
     }

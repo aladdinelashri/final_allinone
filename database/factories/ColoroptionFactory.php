@@ -17,7 +17,7 @@ class ColoroptionFactory extends Factory
     public function definition()
     {
         return [
-            'Title' => '----',
+            'name' => '----',
         ];
     }
 }

@@ -17,7 +17,7 @@ class TagproductFactory extends Factory
     public function definition()
     {
         return [
-            'Title' => '----',
+            'name' => '----',
         ];
     }
 }

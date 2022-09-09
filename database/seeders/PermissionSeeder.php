@@ -107,43 +107,43 @@ class PermissionSeeder extends Seeder
 
         //   create coloroption
         $coloroption = \App\Models\Coloroption::factory()->create([
-            'Title' => '----',
+            'name' => '----',
            
        ]);
 
        //   create sizeoption
        $sizeoption = \App\Models\Sizeoption::factory()->create([
-            'Title' => '----',
+            'name' => '----',
            
        ]);
 
        //   create weightoption
        $weightoption = \App\Models\Weightoption::factory()->create([
-            'Title' => '----',
+            'name' => '----',
            
        ]);
 
        // create categoryitem
        $categoryitem = \App\Models\Categoryitem::factory()->create([
-        'Title' => '----',
+        'name' => '----',
        
    ]);
 
  //  create categoryproduct
    $categoryproduct = \App\Models\Categoryproduct::factory()->create([
-        'Title' => '----',
+        'name' => '----',
        
    ]);
 
  //  create tagitem
    $tagitem = \App\Models\Tagitem::factory()->create([
-        'Title' => '----',
+        'name' => '----',
        
    ]);
 
  //   create tagproduct
    $tagproduct = \App\Models\Tagproduct::factory()->create([
-        'Title' => '----',
+        'name' => '----',
        
    ]);
    

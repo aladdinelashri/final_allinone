@@ -11,12 +11,16 @@ class Categoryproduct extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'Title',
+        'name',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'Title',);
+        'name',);
+        public function products()
+        {
+            return $this->belongsTo (product::class);
+        }
 
 }

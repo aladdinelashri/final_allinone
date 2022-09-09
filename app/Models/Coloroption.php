@@ -11,12 +11,16 @@ class Coloroption extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'Title',
+        'name',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'Title',);
+        'name',);
 
+        public function items()
+        {
+            return $this->belongsTo (Item::class);
+        }
 }

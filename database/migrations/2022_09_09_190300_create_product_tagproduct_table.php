@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tagitems', function (Blueprint $table) {
+        Schema::create('product_tagproduct', function (Blueprint $table) {
             $table->id();
-            $table->softDeletes();
-            $table->string('name', 50)->unique();
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('tagproduct_id')->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tagitems');
+        Schema::dropIfExists('product_tagproduct');
     }
 };

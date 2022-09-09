@@ -17,7 +17,7 @@ class WeightoptionFactory extends Factory
     public function definition()
     {
         return [
-            'Title' => '----',
+            'name' => '----',
         ];
     }
 }

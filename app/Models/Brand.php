@@ -18,7 +18,10 @@ class Brand extends Model
        protected $guarded = array(
         'name', 'note' ,  );
 
-
+        public function brands()
+        {
+            return $this->hasMany (Brand::class);
+        }
         
 
 }
