@@ -103,6 +103,49 @@ class PermissionSeeder extends Seeder
             'is_admin'=> '1',
         ]);
         $user->assignRole($role3);
+
+
+        //   create coloroption
+        $coloroption = \App\Models\Coloroption::factory()->create([
+            'Title' => '----',
+           
+       ]);
+
+       //   create sizeoption
+       $sizeoption = \App\Models\Sizeoption::factory()->create([
+            'Title' => '----',
+           
+       ]);
+
+       //   create weightoption
+       $weightoption = \App\Models\Weightoption::factory()->create([
+            'Title' => '----',
+           
+       ]);
+
+       // create categoryitem
+       $categoryitem = \App\Models\Categoryitem::factory()->create([
+        'Title' => '----',
+       
+   ]);
+
+ //  create categoryproduct
+   $categoryproduct = \App\Models\Categoryproduct::factory()->create([
+        'Title' => '----',
+       
+   ]);
+
+ //  create tagitem
+   $tagitem = \App\Models\Tagitem::factory()->create([
+        'Title' => '----',
+       
+   ]);
+
+ //   create tagproduct
+   $tagproduct = \App\Models\Tagproduct::factory()->create([
+        'Title' => '----',
+       
+   ]);
    
 }
 }
