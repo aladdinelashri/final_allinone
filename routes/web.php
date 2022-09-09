@@ -46,28 +46,66 @@ Route::middleware([
         Route::get('/brandsdetails', function () {
             return view('admin/brandsdetails');
         });
+
+
         Route::get('/coloroptions', function () {
             return view('admin/coloroptions');
         });
+        Route::get('/sdelcoloroptions', function () {
+            return view('admin/sdelcoloroptions');
+        });
+
+
         Route::get('/sizeoptions', function () {
             return view('admin/sizeoptions');
         });
+        Route::get('/sdelsizeoptions', function () {
+            return view('admin/sdelsizeoptions');
+        });
+
+
         Route::get('/weightoptions', function () {
             return view('admin/weightoptions');
         });
+        Route::get('/sdelweightoptions', function () {
+            return view('admin/sdelweightoptions');
+        });
+
+
 
         Route::get('/tagitems', function () {
             return view('admin/tagitems');
         });
+        Route::get('/sdeltagitems', function () {
+            return view('admin/sdeltagitems');
+        });
+
+
         Route::get('/tagproducts', function () {
             return view('admin/tagproducts');
         });
+        Route::get('/sdeltagproducts', function () {
+            return view('admin/sdeltagproducts');
+        });
+
+
+
         Route::get('/categoryitems', function () {
             return view('admin/categoryitems');
+        });
+        Route::get('/sdelcategoryitems', function () {
+            return view('admin/sdelcategoryitems');
+        });
+
+
+        Route::get('/categoryproducts', function () {
+            return view('admin/categoryproducts');
         });
         Route::get('/categoryproducts', function () {
             return view('admin/categoryproducts');
         });
+
+
 
     });
 
