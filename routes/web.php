@@ -46,6 +46,15 @@ Route::middleware([
         Route::get('/brandsdetails', function () {
             return view('admin/brandsdetails');
         });
+        Route::get('/coloroptions', function () {
+            return view('admin/coloroptions');
+        });
+        Route::get('/sizeoptions', function () {
+            return view('admin/sizeoptions');
+        });
+        Route::get('/weightoptions', function () {
+            return view('admin/weightoptions');
+        });
 
 
     });

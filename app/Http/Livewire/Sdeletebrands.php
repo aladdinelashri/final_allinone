@@ -5,6 +5,7 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
+
 class Sdeletebrands extends Component
 {
     use WithPagination;
