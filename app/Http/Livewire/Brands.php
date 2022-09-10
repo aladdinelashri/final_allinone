@@ -26,7 +26,7 @@ class Brands extends Component
     {
         return [
             'name' => 'required',
-            'note' => 'required',
+            
         ];
     }
 
@@ -41,6 +41,8 @@ class Brands extends Component
         $this->resetPage();
     }
 
+
+    
     /**
      * The create function.
      *
@@ -205,4 +207,6 @@ class Brands extends Component
             'data' => $this->read(),
         ]);
     }
+
+    
 }

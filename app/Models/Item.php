@@ -10,10 +10,9 @@ class Item extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = [
-        'Title','Description','Color','Size','Weight','note','logo','coloroption_id','weightoption_id','sizeoption_id','Brand_id','categoryitem_id','in_stock',
+        'Name','Size','Weight','Color','Note','coloroption_id','weightoption_id','sizeoption_id','brand_id','categoryitem_id','in_stock',
     ];
-    protected $dates = ['deleted_at'];
-
+    
     
     public function categoryitem()
     {

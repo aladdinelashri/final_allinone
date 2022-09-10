@@ -43,9 +43,7 @@ Route::middleware([
             return view('admin/sdeletebrands');
         });
 
-        Route::get('/brandsdetails', function () {
-            return view('admin/brandsdetails');
-        });
+       
 
 
         Route::get('/coloroptions', function () {
@@ -105,7 +103,13 @@ Route::middleware([
             return view('admin/categoryproducts');
         });
 
+        Route::get('/items', function () {
+            return view('admin/items');
+        });
 
+        Route::get('/allbrands', function () {
+            return view('admin/allbrands');
+        });
 
     });
 

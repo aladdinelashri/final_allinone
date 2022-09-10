@@ -16,7 +16,7 @@ class Brand extends Model
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name', 'note' ,  );
+        'name',  );
 
         public function brands()
         {

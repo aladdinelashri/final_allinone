@@ -14,8 +14,8 @@ class Sdeletebrands extends Component
     public $modal2ConfirmDeleteVisible = false;
     public $modelId2;
     public $name;
-    public $note;
-    public $selected_id;
+   
+   
     /**
      * The validation rules
      *
@@ -25,7 +25,7 @@ class Sdeletebrands extends Component
     {
         return [
             'name' => 'required',
-            'note' => 'required',
+           
         ];
     }
     /**
@@ -175,7 +175,7 @@ class Sdeletebrands extends Component
     {
         $data2 = Brand::withTrashed()->find($this->modelId2);
               $this->name = $data2->name;
-        $this->note = $data2->note;
+        
     }
     /**
      * The data2 for the model mapped
@@ -187,7 +187,7 @@ class Sdeletebrands extends Component
     {
         return [
             'name' => $this->name,
-            'note' => $this->note,
+           
         ];
     }
 
