@@ -2,20 +2,22 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Brand;
+use App\Models\Fourthoption;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Brands extends Component
+class Sdelforthoptions extends Component
 {
     use WithPagination;
     public $modalFormVisible = false;
+    public $modalForm2Visible = false;
     public $modalConfirmDeleteVisible = false;
     public $modelId;
     public $name;
-    public $note;
+
+
 
     /**
      * The validation rules
@@ -26,7 +28,6 @@ class Brands extends Component
     {
         return [
             'name' => 'required',
-            'note' => 'required',
 
         ];
     }
@@ -42,8 +43,6 @@ class Brands extends Component
         $this->resetPage();
     }
 
-
-
     /**
      * The create function.
      *
@@ -52,7 +51,7 @@ class Brands extends Component
     public function create()
     {
         $this->validate();
-       Brand::create($this->modelData());
+        Fourthoption::create($this->modelData());
         $this->modalFormVisible = false;
         $this->reset();
 
@@ -69,7 +68,7 @@ class Brands extends Component
      */
     public function read()
     {
-        return Brand::paginate(5);
+        return Fourthoption::onlyTrashed()->paginate(5);
     }
 
     /**
@@ -80,7 +79,7 @@ class Brands extends Component
     public function update()
     {
         $this->validate();
-        Brand::find($this->modelId)->update($this->modelData());
+        Fourthoption::find($this->modelId)->update($this->modelData());
         $this->modalFormVisible = false;
 
         $this->dispatchBrowserEvent('event-notification', [
@@ -96,7 +95,9 @@ class Brands extends Component
      */
     public function delete()
     {
-        Brand::destroy($this->modelId);
+        //Brand::destroy($this->modelId);
+
+        Fourthoption::find($this->modelId)->forceDelete($this->modelData());
         $this->modalConfirmDeleteVisible = false;
         $this->resetPage();
 
@@ -161,9 +162,9 @@ class Brands extends Component
      */
     public function loadModel()
     {
-        $data = Brand::find($this->modelId);
+        $data = Fourthoption::find($this->modelId);
         $this->name = $data->name;
-        $this->note = $data->note;
+
 
     }
 
@@ -177,7 +178,7 @@ class Brands extends Component
     {
         return [
             'name' => $this->name,
-            'note' => $this->note,
+
 
         ];
     }
@@ -204,10 +205,11 @@ class Brands extends Component
      */
     public function render()
     {
-        return view('livewire.brands', [
+        return view('livewire.sdelfourthoptions', [
             'data' => $this->read(),
         ]);
     }
-
-
 }
+
+
+

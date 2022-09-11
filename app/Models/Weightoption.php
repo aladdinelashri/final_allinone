@@ -9,19 +9,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Weightoption extends Model
 {
     use HasFactory, SoftDeletes;
-
     protected $fillable = [
-        'name',
+        'name', 'note',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name',);
+        'name','note',  );
 
         public function items()
         {
             return $this->belongsTo(Item::class);
         }
-}
 
+
+}

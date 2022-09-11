@@ -12,35 +12,35 @@ class Item extends Model
     protected $fillable = [
         'Name','Size','Weight','Color','Note','coloroption_id','weightoption_id','sizeoption_id','brand_id','categoryitem_id','in_stock',
     ];
-    
-    
+
+
     public function categoryitem()
     {
-        return $this->hasOne(Categoryitem::class);
+        return $this->belongsTo(Categoryitem::class);
     }
 
 
     public function brand()
     {
-        return $this->hasOne(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 
-    
+
     public function coloroption()
     {
-        return $this->hasOne(Coloroption::class);
+        return $this->belongsTo(Coloroption::class);
     }
 
 
     public function weightoption()
     {
-        return $this->hasOne(Weightoption::class);
+        return $this->belongsTo(Weightoption::class);
     }
 
 
     public function sizeoption()
     {
-        return $this->hasOne(Sizeoption::class);
+        return $this->belongsTo(Sizeoption::class);
     }
 
 

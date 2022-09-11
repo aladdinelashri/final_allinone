@@ -26,7 +26,8 @@ class Categoryitems extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
+
         ];
     }
 
@@ -148,7 +149,7 @@ class Categoryitems extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -160,7 +161,7 @@ class Categoryitems extends Component
     {
         $data = Categoryitem::find($this->modelId);
         $this->name = $data->name;
-      
+        $this->note = $data->note;
 
     }
 
@@ -174,7 +175,7 @@ class Categoryitems extends Component
     {
         return [
             'name' => $this->name,
-           
+            'note' => $this->note,
 
         ];
     }

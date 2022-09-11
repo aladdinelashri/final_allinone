@@ -43,7 +43,7 @@ Route::middleware([
             return view('admin/sdeletebrands');
         });
 
-       
+
 
 
         Route::get('/coloroptions', function () {
@@ -68,6 +68,23 @@ Route::middleware([
         Route::get('/sdelweightoptions', function () {
             return view('admin/sdelweightoptions');
         });
+
+        Route::get('/fourthoptions', function () {
+            return view('admin/fourthoptions');
+        });
+        Route::get('/sdelfourthoptions', function () {
+            return view('admin/sdelfourthoptions');
+        });
+
+
+        Route::get('/fifthoptions', function () {
+            return view('admin/fifthoptions');
+        });
+        Route::get('/sdelfifthoptions', function () {
+            return view('admin/sdelfifthoptions');
+        });
+
+
 
 
 

@@ -17,8 +17,8 @@ class Suppliers extends Model
     ];
     protected $guarded = array('CompanyName', 'ContactName', 'ContactTitle', 'Address', 'City', 'Phone', 'mobile', 'Email', 'WebSite', 'DiscountType', 'Logo', 'Note', 'CurrentOrder');
 
-    public function item()
-    {
-        return $this->belongsToMany(Item::class);
-    }
+    public function items()
+        {
+            return $this->hasMany(Item::class);
+        }
 }

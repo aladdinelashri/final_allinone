@@ -16,12 +16,11 @@ class Brand extends Model
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name',  );
+        'name','note',  );
 
-        public function brands()
+        public function items()
         {
-            return $this->hasMany (Brand::class);
+            return $this->hasMany(Item::class);
         }
-        
 
 }

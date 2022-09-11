@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Tagproduct;
+use App\Models\Tagproduct;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -26,7 +27,7 @@ class Tagproducts extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
         ];
     }
 
@@ -148,7 +149,7 @@ class Tagproducts extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -160,7 +161,7 @@ class Tagproducts extends Component
     {
         $data = Tagproduct::find($this->modelId);
         $this->name = $data->name;
-      
+        $this->note = $data->note;
 
     }
 
@@ -174,7 +175,7 @@ class Tagproducts extends Component
     {
         return [
             'name' => $this->name,
-           
+            'note' => $this->note,
 
         ];
     }
@@ -201,9 +202,11 @@ class Tagproducts extends Component
      */
     public function render()
     {
-        return view('livewire.Tagproducts', [
+        return view('livewire.Tagitems', [
             'data' => $this->read(),
         ]);
     }
 }
+
+
 

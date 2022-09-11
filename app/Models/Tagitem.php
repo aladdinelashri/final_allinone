@@ -9,15 +9,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tagitem extends Model
 {
     use HasFactory, SoftDeletes;
-
     protected $fillable = [
-        'name',
+        'name', 'note',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name',);
+        'name','note',  );
+
+        public function brands()
+        {
+            return $this->hasMany (Brand::class);
+        }
+
 
 }
 

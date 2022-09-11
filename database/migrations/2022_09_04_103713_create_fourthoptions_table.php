@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sizeoptions', function (Blueprint $table) {
+        Schema::create('fourthoptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->Text('note');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sizeoptions');
+        Schema::dropIfExists('fourthoptions');
     }
 };

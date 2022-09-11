@@ -44,7 +44,7 @@
             <select wire:model="selectedBrandId " class="form-control mb-2">
                 <option selected>Choose Brand</option>
 
-                @foreach (App\Models\Brand::all() as $department)
+                @foreach (App\Models\Brand::all() as $brand)
                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                 @endforeach
             </select>

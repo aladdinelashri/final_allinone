@@ -6,18 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tagproduct extends Model
-{
-    use HasFactory, SoftDeletes;
-
+use HasFactory, SoftDeletes;
     protected $fillable = [
-        'name',
+        'name', 'note',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name',);
+        'name','note',  );
+
+        public function brands()
+        {
+            return $this->hasMany (Brand::class);
+        }
+
 
 }
+
 

@@ -9,18 +9,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Categoryproduct extends Model
 {
     use HasFactory, SoftDeletes;
-
     protected $fillable = [
-        'name',
+        'name', 'note',
     ];
 
     protected $dates = ['deleted_at'];
 
        protected $guarded = array(
-        'name',);
+        'name','note',  );
+
         public function products()
         {
-            return $this->belongsTo (product::class);
+            return $this->hasMany(Product::class);
         }
 
+
 }
+

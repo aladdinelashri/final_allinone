@@ -27,7 +27,7 @@ class Tagitems extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
         ];
     }
 
@@ -149,7 +149,7 @@ class Tagitems extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -161,7 +161,7 @@ class Tagitems extends Component
     {
         $data = Tagitem::find($this->modelId);
         $this->name = $data->name;
-      
+        $this->note = $data->note;
 
     }
 
@@ -175,8 +175,7 @@ class Tagitems extends Component
     {
         return [
             'name' => $this->name,
-           
-
+            'note' => $this->note,
         ];
     }
 

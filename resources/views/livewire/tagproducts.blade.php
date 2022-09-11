@@ -20,7 +20,7 @@
                             <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">#</th>
                             <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Created at</th>
                             <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">name</th>
-
+                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">note</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -39,7 +39,10 @@ $i=0;
                                     <td class="px-6 py-4 text-sm whitespace-no-wrap">
                                         {{ $item->name }}
                                     </td>
-                                    
+                                    <td class="px-6 py-4 text-sm whitespace-no-wrap">
+                                        {{ $item->note }}
+                                    </td>
+
                                     <td class="px-6 py-4 text-right text-sm">
                                         <x-jet-button wire:click="updateShowModal({{ $item->id }})">
                                             {{ __('Update') }}
@@ -81,8 +84,12 @@ $i=0;
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="name" />
                 @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
+            <div class="mt-4">
+                <x-jet-label for="note" value="{{ __('note') }}" />
+                <x-jet-input id="note" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="note" />
+                @error('note') <span class="error">{{ $message }}</span> @enderror
+            </div>
 
-           
 
 
 
@@ -127,5 +134,3 @@ $i=0;
     </x-slot>
 </x-jet-dialog-modal>
 </div>
-
-

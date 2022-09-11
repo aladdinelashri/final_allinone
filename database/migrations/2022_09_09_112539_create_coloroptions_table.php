@@ -16,13 +16,14 @@ return new class extends Migration
     {
         Schema::create('coloroptions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->Text('note');
             $table->softDeletes();
-            $table->string('name', 50)->unique();
             $table->timestamps();
         });
     }
 
-    
+
 
     /**
      * Reverse the migrations.
