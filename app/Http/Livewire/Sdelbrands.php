@@ -6,7 +6,7 @@ use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Sdelcoloroptions extends Component
+class Sdelbrands extends Component
 {
     use WithPagination;
     public $modal2FormVisible = false;
