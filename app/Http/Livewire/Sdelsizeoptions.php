@@ -14,7 +14,7 @@ class Sdelsizeoptions extends Component
     public $modal2ConfirmDeleteVisible = false;
     public $modelId2;
     public $name;
-    
+
     /**
      * The validation rules
      *
@@ -24,7 +24,8 @@ class Sdelsizeoptions extends Component
     {
         return [
             'name' => 'required',
-           
+            'note' => 'required',
+
         ];
     }
     /**
@@ -173,8 +174,9 @@ class Sdelsizeoptions extends Component
     public function loadModel()
     {
         $data2 = Sizeoption::withTrashed()->find($this->modelId2);
-              $this->name = $data2->name;
-       
+        $this->name = $data->name;
+        $this->note = $data->note;
+
     }
     /**
      * The data2 for the model mapped
@@ -186,7 +188,8 @@ class Sdelsizeoptions extends Component
     {
         return [
             'name' => $this->name,
-            
+            'note' => $this->note,
+
         ];
     }
 

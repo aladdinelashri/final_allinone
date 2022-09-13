@@ -26,7 +26,7 @@ class Coloroptions extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
         ];
     }
 
@@ -148,7 +148,7 @@ class Coloroptions extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -160,7 +160,8 @@ class Coloroptions extends Component
     {
         $data = Coloroption::find($this->modelId);
         $this->name = $data->name;
-      
+        $this->note = $data->note;
+
 
     }
 
@@ -174,7 +175,8 @@ class Coloroptions extends Component
     {
         return [
             'name' => $this->name,
-           
+            'note' => $this->note,
+
 
         ];
     }

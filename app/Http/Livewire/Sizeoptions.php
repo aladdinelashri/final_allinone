@@ -26,7 +26,8 @@ class Sizeoptions extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
+
         ];
     }
 
@@ -148,7 +149,7 @@ class Sizeoptions extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -160,7 +161,8 @@ class Sizeoptions extends Component
     {
         $data = Sizeoption::find($this->modelId);
         $this->name = $data->name;
-      
+        $this->note = $data->note;
+
 
     }
 
@@ -174,7 +176,7 @@ class Sizeoptions extends Component
     {
         return [
             'name' => $this->name,
-           
+            'note' => $this->note,
 
         ];
     }

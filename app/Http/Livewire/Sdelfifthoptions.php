@@ -28,6 +28,7 @@ class SdelFifthoptions extends Component
     {
         return [
             'name' => 'required',
+            'note' => 'required',
 
         ];
     }
@@ -164,7 +165,7 @@ class SdelFifthoptions extends Component
     {
         $data = Fifthoption::find($this->modelId);
         $this->name = $data->name;
-
+        $this->note = $data->note;
 
     }
 
@@ -178,6 +179,7 @@ class SdelFifthoptions extends Component
     {
         return [
             'name' => $this->name,
+            'note' => $this->note,
 
 
         ];

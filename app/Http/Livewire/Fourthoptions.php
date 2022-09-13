@@ -26,6 +26,7 @@ class Fourthoptions extends Component
     {
         return [
             'name' => 'required',
+            'note' => 'required',
 
         ];
     }
@@ -160,6 +161,7 @@ class Fourthoptions extends Component
     {
         $data = Fourthoption::find($this->modelId);
         $this->name = $data->name;
+        $this->note = $data->note;
 
 
     }
@@ -174,6 +176,7 @@ class Fourthoptions extends Component
     {
         return [
             'name' => $this->name,
+            'note' => $this->note,
 
 
         ];

@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Tagproduct;
+
 use App\Models\Tagproduct;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;

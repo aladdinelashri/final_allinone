@@ -26,7 +26,8 @@ class Weightoptions extends Component
     {
         return [
             'name' => 'required',
-            
+            'note' => 'required',
+
         ];
     }
 
@@ -148,7 +149,7 @@ class Weightoptions extends Component
         $this->modalConfirmDeleteVisible = true;
     }
 
-   
+
 
     /**
      * Loads the model data
@@ -160,7 +161,7 @@ class Weightoptions extends Component
     {
         $data = Weightoption::find($this->modelId);
         $this->name = $data->name;
-      
+
 
     }
 
@@ -174,7 +175,8 @@ class Weightoptions extends Component
     {
         return [
             'name' => $this->name,
-           
+            'note' => $this->note,
+
 
         ];
     }
