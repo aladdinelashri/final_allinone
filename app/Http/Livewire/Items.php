@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Item;
 use Illuminate\Validation\Rule;
 use Livewire\WithPagination;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 
 class Items extends Component
@@ -34,8 +35,9 @@ class Items extends Component
     public $brands;
     public $itemId;
     public $selectedBrandId = null;
+    public $slug;
 
-    
+
 
 
     /**
@@ -57,7 +59,7 @@ class Items extends Component
             'brandId' => 'required',
             'Note' => 'required',
             'in_stock' => 'required',
-               
+
         ];
     }
 
@@ -76,6 +78,14 @@ class Items extends Component
         $this->Note =  $item->Note;
         $this->in_stock =  $item->in_stock;
     }
+
+
+    public function generateSlug()
+    {
+        $this->slug = SlugService::createSlug(Item::class, 'slug', $this->Name);
+    }
+
+
 
 /**
      * The data for the model mapped
@@ -103,7 +113,7 @@ class Items extends Component
         ];
     }
 
-    
+
 
  /**
      * The livewire mount function
@@ -142,9 +152,9 @@ class Items extends Component
      */
     public function read()
     {
-        return Item::paginate(5);  
-    
-        
+        return Item::paginate(5);
+
+
     }
 
 /**
@@ -162,7 +172,7 @@ class Items extends Component
 
 
 
-   
+
 
     public function render()
     {

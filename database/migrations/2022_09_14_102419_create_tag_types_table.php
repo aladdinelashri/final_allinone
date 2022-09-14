@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('weightoptions', function (Blueprint $table) {
+        Schema::create('tag_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->Text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('weightoptions');
+        Schema::dropIfExists('tag_types');
     }
 };

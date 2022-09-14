@@ -5,10 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Tags\HasTags;
 
 class Brand extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use Softdeletes;
+    use HasTags;
+
+
     protected $fillable = [
         'name', 'note',
     ];

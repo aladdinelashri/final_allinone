@@ -161,5 +161,23 @@ class PermissionSeeder extends Seeder
 
    ]);
 
+   //   create tagtype
+   $tagproduct = \App\Models\TagType::factory()->create([
+    'name' => '----',
+
+]);
+
+//   create tagtype
+$tagproduct = \App\Models\TagType::factory()->create([
+    'name' => 'ورق',
+
+]);
+
+//   create tagtype
+$tagproduct = \App\Models\TagType::factory()->create([
+    'name' => 'أخشاب',
+
+]);
+
 }
 }

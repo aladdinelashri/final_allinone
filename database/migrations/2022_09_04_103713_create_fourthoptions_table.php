@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('fourthoptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->Text('note');
+            $table->Text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

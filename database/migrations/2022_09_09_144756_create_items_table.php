@@ -25,6 +25,7 @@ return new class extends Migration
              $table->foreignId('categoryitem_id')->constrained();
              $table->foreignId('brand_id')->constrained()->default(1);
              $table->text('Note')->nullable();
+             $table->string('slug');
              $table->boolean('in_stock')->default(0);
              $table->softDeletes();
         });

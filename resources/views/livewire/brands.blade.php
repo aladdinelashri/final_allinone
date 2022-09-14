@@ -10,6 +10,25 @@
 
  {{-- The data table --}}
  <div class="flex flex-col">
+    <div class="flex items-center">
+        <label class="relative block w-full">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                <svg class="h-5 w-5 fill-stone-300 dark:fill-stone-500" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                </svg>
+            </span>
+            <input
+                wire:model.debounce.250ms="search"
+                wire:ref="search-box"
+                type="text"
+                name="search"
+                value=""
+                placeholder="Type something..."
+                class="placeholder:italic placeholder:text-stone-400 dark:placeholder:text-stone-500 dark:text-stone-400 block bg-stone-50 dark:bg-stone-900 w-full border border-stone-300 dark:border-stone-600 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                placeholder="Search all articles and videos..." type="text" name="search"/>
+        </label>
+    </div>
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">

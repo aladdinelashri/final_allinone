@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\Livewire;
-use App\Models\Tagproduct;
+use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Sdeltagproducts extends Component
+class Sdelprod extends Component
 {
     use WithPagination;
     public $modal2FormVisible = false;
@@ -46,7 +46,7 @@ class Sdeltagproducts extends Component
     public function create()
     {
         $this->validate();
-        Tagproduct::create($this->modeldata2());
+        Product::create($this->modeldata2());
         $this->modal2FormVisible = false;
         $this->reset();
         $this->dispatchBrowserEvent('event-notification', [
@@ -61,7 +61,7 @@ class Sdeltagproducts extends Component
      */
     public function read()
     {
-        return Tagproduct::onlyTrashed()->paginate(5);
+        return Product::onlyTrashed()->paginate(5);
     }
     /**
      * The update function.
@@ -71,7 +71,7 @@ class Sdeltagproducts extends Component
     public function update()
     {
         $this->validate();
-        Tagproduct::find($this->modelId2)->update($this->modeldata2());
+        Product::find($this->modelId2)->update($this->modeldata2());
         $this->modal2FormVisible = false;
         $this->dispatchBrowserEvent('event-notification', [
             'eventName' => 'Updated Page',
@@ -85,7 +85,7 @@ class Sdeltagproducts extends Component
      */
     public function delete()
     {
-        Tagproduct::onlyTrashed()->find($this->modelId2)->forceDelete($this->modeldata2());
+        Product::onlyTrashed()->find($this->modelId2)->forceDelete($this->modeldata2());
         $this->modal2ConfirmDeleteVisible = false;
         $this->resetPage();
         $this->dispatchBrowserEvent('event-notification', [
@@ -102,7 +102,7 @@ class Sdeltagproducts extends Component
      */
     public function restore()
     {
-        Tagproduct::withTrashed()->find($this->modelId2)->restore();
+        Product::withTrashed()->find($this->modelId2)->restore();
         $this->modal2ConfirmRestoreVisible = false;
         $this->resetPage();
         $this->dispatchBrowserEvent('event-notification', [
@@ -173,7 +173,7 @@ class Sdeltagproducts extends Component
      */
     public function loadModel()
     {
-        $data2 = Tagproduct::withTrashed()->find($this->modelId2);
+        $data2 = Product::withTrashed()->find($this->modelId2);
         $this->name = $data->name;
         $this->note = $data->note;
 
@@ -213,11 +213,9 @@ class Sdeltagproducts extends Component
      */
     public function render()
     {
-        return view('livewire.sdeltagproducts', [
+        return view('livewire.sdelprod', [
             'data2' => $this->read(),
         ]);
     }
 }
-
-
 
